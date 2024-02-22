@@ -23,16 +23,32 @@ class MatrixTest {
     }
 
     @Test
-    void isMatrixSquare() {
+    void isMatrixSquareTrue() {
         int[][] matrix1 = new int[5][5];
         assertEquals(matrix.isMatrixSquare(matrix1), true);
-        int[][] matrix2 = new int[][]{{1, 1, 5}, {5, 5, 6}, {8, 8, 8, 4, 5, 6}, {1, 2}};
-        assertEquals(matrix.isMatrixSquare(matrix2), false);
+    }
+    @Test
+    void isMatrixSquareNull() {
         int [][] matrix3 = null;
         assertEquals(matrix.isMatrixSquare(matrix3), false);
+    }
+    @Test
+    void isMatrixSquareEmpty() {
         int[][] matrix4 = new int[0][0];
         assertEquals(matrix.isMatrixSquare(matrix4), false);
+    }
+    @Test
+    void isMatrixSquareTeeth() {
+        int[][] matrix2 = new int[][]{{1, 1, 5}, {5, 5, 6}, {8, 8, 8, 4, 5, 6}, {1, 2}};
+        assertEquals(matrix.isMatrixSquare(matrix2), false);
+    }
+    @Test
+    void isMatrixSquareFalse() {
         int[][] matrix5 = new int[5][6];
         assertEquals(matrix.isMatrixSquare(matrix5), false);
     }
+
 }
+
+
+
